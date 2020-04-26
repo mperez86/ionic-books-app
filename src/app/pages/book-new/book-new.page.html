@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>New book</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label position="stacked">Title</ion-label>
+        <ion-input formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Language</ion-label>
+        <ion-select formControlName="language">
+          <ion-select-option value="Javascript">Javascript</ion-select-option>
+          <ion-select-option value="Java">Java</ion-select-option>
+          <ion-select-option value="PHP">PHP</ion-select-option>
+          <ion-select-option value="C++">C++</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Edition</ion-label>
+        <ion-input formControlName="edition"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Publisher</ion-label>
+        <ion-input formControlName="publisher"></ion-input>
+        </ion-item>
+      <div class="ion-margin ion-text-right">
+        <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+          <ion-fab-button 
+            shape="round" 
+            color="primary" 
+            (click)="submitForm()" 
+            [disabled]="form.invalid"
+          >
+            <ion-icon name="checkmark"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+    </form>
+  </ion-content>
